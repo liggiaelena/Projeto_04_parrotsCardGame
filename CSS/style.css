@@ -1,3 +1,67 @@
 *{
     box-sizing: border-box;
 }
+@font-face {
+    font-family:"Roboto-Bold" ;
+    src: url(../fontes/Roboto-Bold.ttf);
+}
+
+body{
+    background-color: #eef9bf;
+    font-family: "Roboto-Bold" ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.titulo{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    font-size: 56px;
+    color: #75B79E;
+   
+}
+.disappear{
+    display: none;
+}
+.jogo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin-top: 17px;
+}
+
+.cartas{
+    width: 117px;
+    height: 146px;
+    background-color: #a7e9af;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 37px;
+    border: 1px solid #99CEA8;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+@media(max-width:600px){
+    .titulo{
+        font-size: 39px;
+        width: auto;
+        text-align: center;
+
+    }
+    .disappear{
+        display: initial;
+    }
+    .jogo{
+        width: 50vw;
+    }
+}

@@ -29,7 +29,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 70%;
     margin-top: 17px;
 }
 
@@ -44,11 +44,24 @@ body{
     margin-left: 30px;
     margin-top: 37px;
     border: 1px solid #99CEA8;
+    position: relative;
+   
+}
+.cartas:hover{
+    cursor: pointer;
+    transform:  translate(2px, 2px);
+   
+    
 }
 
 img{
     width: 100px;
     height: 100px;
+}
+
+.gif{
+    z-index: -11;
+    position:absolute;
 }
 
 @media(max-width:600px){
@@ -58,10 +71,10 @@ img{
         text-align: center;
 
     }
-    .disappear{
-        display: initial;
-    }
     .jogo{
         width: 50vw;
+    }
+    h1{
+        max-width: 350px;
     }
 }

@@ -32,13 +32,17 @@ function mostrarCartas(quantidade){
     let jogo = document.querySelector(".jogo");
     let quantidadeCartas = "";
     listaGifs.sort(comparador);
-       
+
     for(let i=0; i!= quantidade; i++){
-        quantidadeCartas += `<div class="cartas"><img src="midia/front.png"/><img src="midia/${listaGifs[i]}" class="gif"/></div>`;
+        quantidadeCartas += `<div class="cartas " onclick="virarCarta(this)"><img src="midia/front.png"/><img src="midia/${listaGifs[i]}" class="gif"/></div>`;
     }
     jogo.innerHTML = quantidadeCartas;
 }
 
 function comparador() { 
 	return Math.random() - 0.5; 
+} 
+
+function virarCarta(cartaSelecionada){
+    cartaSelecionada.classList.add("permanecer-virada");
 }

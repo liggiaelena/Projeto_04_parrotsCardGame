@@ -58,9 +58,10 @@ body{
 /*.cartas:active{
     transform: rotateY(180deg);
 }*/
-.permanecer-virada{
+.permanecer-virada, .virei {
     transform: rotateY(180deg);
 }
+
 img{
     width: 100px;
     height: 100px;

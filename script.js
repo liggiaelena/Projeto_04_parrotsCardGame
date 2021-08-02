@@ -8,7 +8,6 @@ let listaGifs = [
     "unicornparrot",
 ];
 let paresDosGifs = [];
-//listaGifs.sort(comparador);
 let quantidade = 0;
 let contador = 0;
 perguntarQuantidade();
@@ -27,8 +26,8 @@ function perguntarQuantidade(){
 function mostrarCartas(quantidade){
     let jogo = document.querySelector(".jogo");
     let quantidadeCartas = "";
-    
-    listaGifs.sort(comparador);
+     listaGifs.sort(comparador);
+
     for(let i=0; i<quantidade/2; i++){
         paresDosGifs.push(listaGifs[i]);
     }
@@ -51,36 +50,31 @@ function comparador() {
             } 
 
 function virarCarta(cartaSelecionada){
-   let cartasAbertas = document.querySelector(".virei");
+   let primeiraCartaVirada = document.querySelector(".virei");
    let gifCartaSelecionada = cartaSelecionada.querySelector(".gif");
-   contador++;
-     
-   
 
-    if(cartasAbertas === null){
     cartaSelecionada.classList.add("virei");
-    }
-    else{
-        cartaSelecionada.classList.add("virei");
-        let gifCartaAberta = cartasAbertas.querySelector(".gif");
+    contador++;
+     
+    if(primeiraCartaVirada !== null){
+        let gifPrimeiraCartaVirada = primeiraCartaVirada.querySelector(".gif");
+                
+            if( gifCartaSelecionada.className === gifPrimeiraCartaVirada.className){
             
-        if( gifCartaSelecionada.className === gifCartaAberta.className){
-        
-             cartaSelecionada.classList.add("permanecer-virada");
-             cartasAbertas.classList.add("permanecer-virada");
-             cartaSelecionada.classList.remove("virei");
-             cartasAbertas.classList.remove("virei");
-             
-            finalDoJogo();
-        }
-        else{
-               setTimeout(function (){
-                   cartasAbertas.classList.remove("virei");
+                cartaSelecionada.classList.add("permanecer-virada");
+                primeiraCartaVirada.classList.add("permanecer-virada");
                 cartaSelecionada.classList.remove("virei");
-               }, 1000);      
-        }
+                primeiraCartaVirada.classList.remove("virei");
+                
+                finalDoJogo();
+            }
+            else{
+                setTimeout(function (){
+                    primeiraCartaVirada.classList.remove("virei");
+                    cartaSelecionada.classList.remove("virei");
+                }, 1000);      
+            }
     }
-   
     
 }
 

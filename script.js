@@ -29,16 +29,16 @@ function mostrarCartas(quantidade){
     let quantidadeCartas = "";
     
     listaGifs.sort(comparador);
-    for(let i=0; i<quantidade; i++){
-        paresDosGifs.push(`${listaGifs[i]}`);
+    for(let i=0; i<quantidade/2; i++){
+        paresDosGifs.push(listaGifs[i]);
     }
-
+    paresDosGifs.sort(comparador);
     for(let j=0; j!= quantidade/2; j++){
         quantidadeCartas += `<div class="cartas " onclick="virarCarta(this)">
         <img src="midia/front.png"/><img src="midia/${listaGifs[j]}.gif" class="gif ${listaGifs[j]}" />
         </div>`;     
     }
-     paresDosGifs.sort(comparador);
+     
      for(let j=0; j!= quantidade/2; j++){
         quantidadeCartas += `<div class="cartas " onclick="virarCarta(this)">
         <img src="midia/front.png"/><img src="midia/${paresDosGifs[j]}.gif" class="gif ${paresDosGifs[j]}" />
@@ -46,7 +46,6 @@ function mostrarCartas(quantidade){
     }
 
     jogo.innerHTML = quantidadeCartas;
-    alert(paresDosGifs)
 }
 
 function comparador() { 
